@@ -1,3 +1,22 @@
-<div class="wfull h-screen">
-  <router-outlet></router-outlet>
+<div>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Star Wars API</a>
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="films" class="nav-link">Films</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="peoples" class="nav-link">People</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="planets" class="nav-link">Planets</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="species" class="nav-link">Species</a>
+      </li>
+    </div>
+  </nav>
+  <div class="container mt-3">
+    <router-outlet></router-outlet>
+  </div>
 </div>

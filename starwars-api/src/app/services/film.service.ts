@@ -1,16 +1,20 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { Film } from "src/models/films";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Film } from 'src/models/films';
+
+const endpoint = 'https://swapi.dev/api/films/';
 
 @Injectable({ providedIn: 'root' })
+export class FilmService {  
 
-export class FilmService {
-    private readonly endpoint = 'https://swapi.dev/api/films/1/';
+  constructor(private http: HttpClient) {}
 
-    constructor(private http: HttpClient) {}
+  getAllFilm(): Observable<Film[]> {
+    return this.http.get<Film[]>(endpoint);
+  }
 
-    getAllFilm(): Observable<Film> {
-        return this.http.get<Film>(this.endpoint);
-    }
+  findByTitle(title: any): Observable<Film[]> {
+    return this.http.get<Film[]>(`${endpoint}?title=${title}`);
+  }
 }

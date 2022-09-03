@@ -15,5 +15,8 @@ export class PeopleService {
         return this.http.get<People[]>(endpoint);
     }
 
+    findByName(name: any): Observable<People[]> {
+        return this.http.get<People[]>(`${endpoint}?name=${name}`);
+    }
     
 }

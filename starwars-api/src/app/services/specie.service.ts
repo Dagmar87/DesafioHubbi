@@ -14,4 +14,9 @@ export class SpecieService {
     getAllSpecie(): Observable<Specie[]> {
         return this.http.get<Specie[]>(endpoint);
     }
+
+    findByName(name: any): Observable<Specie[]> {
+        return this.http.get<Specie[]>(`${endpoint}?name=${name}`);
+    }
+
 }

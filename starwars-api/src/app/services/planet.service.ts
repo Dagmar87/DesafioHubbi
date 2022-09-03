@@ -14,4 +14,8 @@ export class PlanetService {
     getAllPlanets(): Observable<Planet[]> {
         return this.http.get<Planet[]>(endpoint);
     }
+
+    findByName(name: any): Observable<Planet[]> {
+        return this.http.get<Planet[]>(`${endpoint}?name=${name}`);
+    }
 }

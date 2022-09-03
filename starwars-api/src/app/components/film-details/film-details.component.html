@@ -1,0 +1,28 @@
+<div *ngIf="viewMode">
+    <div *ngIf="currentFilm.episode_id">
+      <h4>Film</h4>
+      <div>
+        <label><strong>Title:</strong></label> {{ currentFilm.title }}
+      </div>
+      <div>
+        <label><strong>Director:</strong></label>
+        {{ currentFilm.director }}
+      </div>
+      <div>
+        <label><strong>Release Date:</strong></label>
+        {{ currentFilm.release_date }}
+      </div>
+      <div>
+        <label><strong>Opening Crawl:</strong></label>
+        {{ currentFilm.opening_crawl }}
+      </div>
+      <div>
+        <label><strong>Producer:</strong></label>
+        {{ currentFilm.producer }}
+      </div>
+    </div>
+    <div *ngIf="!currentFilm">
+      <br />
+      <p>Please click on a Film...</p>
+    </div>
+  </div>

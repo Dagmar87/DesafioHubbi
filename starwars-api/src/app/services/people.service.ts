@@ -5,18 +5,19 @@ import { People } from "src/models/people";
 
 const endpoint = 'https://swapi.dev/api/people/';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root',
+})
 
 export class PeopleService {
-    
-    constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-    getAllPeople(): Observable<People[]> {
-        return this.http.get<People[]>(endpoint);
-    }
+  getAllPeople(): Observable<People[]> {
+    return this.http.get<People[]>(endpoint)
+      
+  }
 
-    findByName(name: any): Observable<People[]> {
-        return this.http.get<People[]>(`${endpoint}?name=${name}`);
-    }
-    
+  findByName(name: any): Observable<People[]> {
+    return this.http.get<People[]>(`${endpoint}?name=${name}`);
+  }
 }

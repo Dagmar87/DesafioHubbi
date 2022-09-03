@@ -9,6 +9,7 @@ import { FilmComponent } from './components/film/film.component';
 import { PeopleComponent } from './components/people/people.component';
 import { SpecieComponent } from './components/specie/specie.component';
 import { FormsModule } from '@angular/forms';
+import { FilmDetailsComponent } from './components/film-details/film-details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     PlanetComponent,
     FilmComponent,
     PeopleComponent,
-    SpecieComponent
+    SpecieComponent,
+    FilmDetailsComponent
   ],
   imports: [
     BrowserModule,

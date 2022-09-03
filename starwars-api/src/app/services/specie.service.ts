@@ -1,22 +1,22 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { Specie } from "src/models/specie";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Specie } from 'src/models/specie';
 
 const endpoint = 'https://swapi.dev/api/species/';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root',
+})
 
-export class SpecieService {    
+export class SpecieService {
+  constructor(private http: HttpClient) {}
 
-    constructor(private http: HttpClient) {}
+  getAllSpecie(): Observable<Specie[]> {
+    return this.http.get<Specie[]>(endpoint);
+  }
 
-    getAllSpecie(): Observable<Specie[]> {
-        return this.http.get<Specie[]>(endpoint);
-    }
-
-    findByName(name: any): Observable<Specie[]> {
-        return this.http.get<Specie[]>(`${endpoint}?name=${name}`);
-    }
-
+  findByName(name: any): Observable<Specie[]> {
+    return this.http.get<Specie[]>(`${endpoint}?name=${name}`);
+  }
 }
